@@ -19,6 +19,9 @@ class MyViewController : UIViewController {
         label.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        label.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        label.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        
         self.view = view
     }
 }
