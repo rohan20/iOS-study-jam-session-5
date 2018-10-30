@@ -10,10 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var firstQuoteBox: QuoteBox!
+    @IBOutlet weak var secondQuoteBox: QuoteBox!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstQuoteBox.content = "First Box"
+        firstQuoteBox.author = "Rohan"
+        
+        secondQuoteBox.content = "Second Box"
+        secondQuoteBox.author = "Taneja"
     }
-
-
 }
 

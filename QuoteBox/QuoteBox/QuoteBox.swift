@@ -10,11 +10,24 @@ import UIKit
 
 class QuoteBox: UIView {
     
+    var content: String? {
+        didSet {
+            contentLabel.text = content
+        }
+    }
+
+    var author: String? {
+        didSet {
+            authorLabel.text = author
+        }
+    }
+    
     private let contentLabel = UILabel()
     private let authorLabel = UILabel()
-        
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,13 +42,13 @@ class QuoteBox: UIView {
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentLabel.text = "Welcome to iOS Study Jam!\nBrought to you by WTM Berlin"
+        //contentLabel.text = "Welcome to iOS Study Jam!\nBrought to you by WTM Berlin"
         contentLabel.textColor = .black
         
         contentLabel.numberOfLines = 0
         contentLabel.textAlignment = .center
         
-        authorLabel.text = "Rohan Taneja"
+        //authorLabel.text = "Rohan Taneja"
         authorLabel.textColor = .white
         
         layer.shadowColor = UIColor.green.cgColor
