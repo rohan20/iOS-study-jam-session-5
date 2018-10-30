@@ -9,20 +9,24 @@ class MyViewController : UIViewController {
         view.backgroundColor = .white
 
         let containerView = UIView()
-        let label = UILabel()
+        let contentLabel = UILabel()
+        let authorLabel = UILabel()
         
         containerView.backgroundColor = .green
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .green
-        label.text = "Welcome to iOS Study Jam!\nBrought to you by WTM Berlin"
-        label.textColor = .black
+        contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentLabel.backgroundColor = .green
+        contentLabel.text = "Welcome to iOS Study Jam!\nBrought to you by WTM Berlin"
+        contentLabel.textColor = .black
         
-        label.numberOfLines = 0
-        label.textAlignment = .center
+        contentLabel.numberOfLines = 0
+        contentLabel.textAlignment = .center
         
+        authorLabel.translatesAutoresizingMaskIntoConstraints = false
+        authorLabel.text = "Rohan Taneja"
+        authorLabel.textColor = .white
+
         containerView.layer.shadowColor = UIColor.green.cgColor
         containerView.layer.shadowRadius = 20.0
         containerView.layer.shadowOpacity = 1.0
@@ -30,13 +34,20 @@ class MyViewController : UIViewController {
         containerView.layer.borderColor = UIColor.white.cgColor
         containerView.layer.borderWidth = 1
         
-        containerView.addSubview(label)
+        contentLabel.backgroundColor = .cyan
+        authorLabel.backgroundColor = .blue
         
-        label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 40).isActive = true
+        containerView.addSubview(contentLabel)
+        containerView.addSubview(authorLabel)
         
-        label.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
-        containerView.rightAnchor.constraint(equalTo: label.rightAnchor, constant: 20).isActive = true
+        contentLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 40).isActive = true
+        
+        contentLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+        containerView.rightAnchor.constraint(equalTo: contentLabel.rightAnchor, constant: 20).isActive = true
+        
+        authorLabel.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 30).isActive = true
+        authorLabel.rightAnchor.constraint(equalTo: contentLabel.rightAnchor, constant: 0).isActive = true
         
         view.addSubview(containerView)
         
